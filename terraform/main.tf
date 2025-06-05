@@ -2,16 +2,16 @@ module "sandbox" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "<ACCOUNT EMAIL>"
-    AccountName               = "sandbox-aft"
-    ManagedOrganizationalUnit = "Learn AFT"
-    SSOUserEmail              = "<SSO EMAIL>"
+    AccountEmail              = "services+faura-sandbox@faura.us"
+    AccountName               = "sandbox"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "services+faura-sandbox@faura.us"
     SSOUserFirstName          = "Sandbox"
-    SSOUserLastName           = "AFT"
+    SSOUserLastName           = "Faura"
   }
 
   account_tags = {
-    "Learn Tutorial" = "AFT"
+    "account" = "sandbox"
   }
 
   change_management_parameters = {
