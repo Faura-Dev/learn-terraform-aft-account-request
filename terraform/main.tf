@@ -12,6 +12,7 @@ module "sandbox" {
 
   account_tags = {
     "account" = "sandbox"
+    "managed" = "AFT"
   }
 
   change_management_parameters = {
