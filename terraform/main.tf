@@ -51,7 +51,7 @@ module "dev_property_assessment" {
 
   change_management_parameters = {
     change_requested_by = "Henry Wanjala"
-    change_reason       = "Create Development Faura Property Self Assessment Account using AWS Control Tower Account Factory for Terraform"
+    change_reason       = "Development Faura Property Self Assessment Account using AWS Control Tower Account Factory for Terraform"
   }
 
   custom_fields = {
