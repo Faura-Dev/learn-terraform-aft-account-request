@@ -45,8 +45,6 @@ module "dev_property_self_assessment" {
     "managed"     = "AFT"
     "environment" = "development"
     "application" = "faura-property-self-assessment"
-    "security"    = "high"
-    "compliance"  = "enterprise"
   }
 
   change_management_parameters = {
