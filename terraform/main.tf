@@ -28,7 +28,7 @@ module "sandbox" {
 }
 
 # Development Faura Property Self Assessment Account
-module "dev_property_assessment" {
+module "dev_property_self_assessment" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
