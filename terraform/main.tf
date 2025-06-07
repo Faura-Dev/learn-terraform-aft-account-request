@@ -34,7 +34,7 @@ module "dev_property_assessment" {
   control_tower_parameters = {
     AccountEmail              = "services+dev-property-self-assessment@faura.us"
     AccountName               = "dev-property-self-assessment"
-    ManagedOrganizationalUnit = "Workloads/Development"
+    ManagedOrganizationalUnit = "Development (ou-o30i-30uyyvzp)"
     SSOUserEmail              = "services+dev-property-self-assessment@faura.us"
     SSOUserFirstName          = "Development"
     SSOUserLastName           = "Property Assessment"
@@ -56,8 +56,6 @@ module "dev_property_assessment" {
 
   custom_fields = {
     group        = "development"
-    security_team = "enterprise-security"
-    app_team     = "property-assessment-team"
   }
 
   account_customizations_name = "dev-property-self-assessment"
