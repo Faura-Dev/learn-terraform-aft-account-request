@@ -60,3 +60,35 @@ module "dev_property_self_assessment" {
 
   account_customizations_name = "dev-property-self-assessment"
 }
+
+# Staging Faura Property Self Assessment Account
+module "staging_property_self_assessment" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "services+staging-property-self-assessment@faura.us"
+    AccountName               = "staging-property-self-assessment"
+    ManagedOrganizationalUnit = "Staging (ou-o30i-zyk8ez93)"
+    SSOUserEmail              = "services+staging-property-self-assessment@faura.us"
+    SSOUserFirstName          = "Staging"
+    SSOUserLastName           = "Property Assessment"
+  }
+
+  account_tags = {
+    "account"     = "staging-property-self-assessment"
+    "managed"     = "AFT"
+    "environment" = "staging"
+    "application" = "faura-property-self-assessment"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Henry Wanjala"
+    change_reason       = "Staging Faura Property Self Assessment Account using AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group        = "staging"
+  }
+
+  account_customizations_name = "staging-property-self-assessment"
+}
