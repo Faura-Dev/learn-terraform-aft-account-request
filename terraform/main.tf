@@ -28,20 +28,20 @@ module "sandbox" {
 }
 
 # Development Faura Property Self Assessment Account
-module "dev_property_self_assessment" {
+module "dev2_property_self_assessment" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "services+dev-property-self-assessment@faura.us"
-    AccountName               = "dev-property-self-assessment"
+    AccountEmail              = "services+dev2-property-self-assessment@faura.us"
+    AccountName               = "dev2-property-self-assessment"
     ManagedOrganizationalUnit = "Development (ou-o30i-30uyyvzp)"
-    SSOUserEmail              = "services+dev-property-self-assessment@faura.us"
+    SSOUserEmail              = "services+dev2-property-self-assessment@faura.us"
     SSOUserFirstName          = "Development"
     SSOUserLastName           = "Property Assessment"
   }
 
   account_tags = {
-    "account"     = "dev-property-selft-assessment"
+    "account"     = "dev2-property-self-assessment"
     "managed"     = "AFT"
     "environment" = "development"
     "application" = "faura-property-self-assessment"
