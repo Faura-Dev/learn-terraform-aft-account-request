@@ -90,3 +90,35 @@ module "staging_property_self_assessment" {
 
   account_customizations_name = "staging-property-self-assessment"
 }
+
+# Production Faura Property Self Assessment Account
+module "prod_property_self_assessment" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "services+prod-property-self-assessment@faura.us"
+    AccountName               = "prod-property-self-assessment"
+    ManagedOrganizationalUnit = "Production (ou-o30i-9c3v0uku)"
+    SSOUserEmail              = "services+prod-property-self-assessment@faura.us"
+    SSOUserFirstName          = "Production"
+    SSOUserLastName           = "Property Assessment"
+  }
+
+  account_tags = {
+    "account"     = "prod-property-self-assessment"
+    "managed"     = "AFT"
+    "environment" = "production"
+    "application" = "faura-property-self-assessment"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Henry Wanjala"
+    change_reason       = "Production Faura Property Self Assessment Account using AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group        = "production"
+  }
+
+  account_customizations_name = "prod-property-self-assessment"
+}
