@@ -122,3 +122,35 @@ module "prod_property_self_assessment" {
 
   account_customizations_name = "prod-property-self-assessment"
 }
+
+# Production Faura Resilience Model Account
+module "prod_resilience_model" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "services+prod-resilience-model@faura.us"
+    AccountName               = "prod-resilience-model"
+    ManagedOrganizationalUnit = "Production (ou-o30i-9c3v0uku)"
+    SSOUserEmail              = "services+prod-resilience-model@faura.us"
+    SSOUserFirstName          = "Production"
+    SSOUserLastName           = "Resilience Model"
+  }
+
+  account_tags = {
+    "account"     = "prod-resilience-model"
+    "managed"     = "AFT"
+    "environment" = "production"
+    "application" = "faura-resilience-model"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Henry Wanjala"
+    change_reason       = "Production Faura Resilience Model Account using AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group        = "production"
+  }
+
+  account_customizations_name = "prod-resilience-model"
+}
