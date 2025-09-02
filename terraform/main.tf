@@ -59,6 +59,8 @@ module "dev2_property_self_assessment" {
   account_customizations_name = "dev-property-self-assessment"
 }
 
+
+
 # Staging Faura Property Self Assessment Account
 module "staging_property_self_assessment" {
   source = "./modules/aft-account-request"
@@ -121,6 +123,38 @@ module "prod_property_self_assessment" {
   }
 
   account_customizations_name = "prod-property-self-assessment"
+}
+
+# Development Faura Resilience Model Account
+module "dev_resilience_model" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "services+dev-resilience-model@faura.us"
+    AccountName               = "dev-resilience-model"
+    ManagedOrganizationalUnit = "Development (ou-o30i-30uyyvzp)"
+    SSOUserEmail              = "services+dev-resilience-model@faura.us"
+    SSOUserFirstName          = "Development"
+    SSOUserLastName           = "Resilience Model"
+  }
+
+  account_tags = {
+    "account"     = "dev-resilience-model"
+    "managed"     = "AFT"
+    "environment" = "development"
+    "application" = "faura-resilience-model"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Henry Wanjala"
+    change_reason       = "Development Faura Resilience Model Account using AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group        = "development"
+  }
+
+  account_customizations_name = "dev-resilience-model"
 }
 
 # Production Faura Resilience Model Account
