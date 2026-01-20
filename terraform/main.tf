@@ -53,7 +53,7 @@ module "dev2_property_self_assessment" {
   }
 
   custom_fields = {
-    group        = "development"
+    group = "development"
   }
 
   account_customizations_name = "dev-property-self-assessment"
@@ -87,7 +87,7 @@ module "staging_property_self_assessment" {
   }
 
   custom_fields = {
-    group        = "staging"
+    group = "staging"
   }
 
   account_customizations_name = "staging-property-self-assessment"
@@ -119,7 +119,7 @@ module "prod_property_self_assessment" {
   }
 
   custom_fields = {
-    group        = "production"
+    group = "production"
   }
 
   account_customizations_name = "prod-property-self-assessment"
@@ -151,10 +151,42 @@ module "dev_resilience_model" {
   }
 
   custom_fields = {
-    group        = "development"
+    group = "development"
   }
 
   account_customizations_name = "dev-resilience-model"
+}
+
+# Staging Faura Resilience Model Account
+module "staging_resilience_model" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "services+faura-staging-resilience-model@faura.us"
+    AccountName               = "staging-resilience-model"
+    ManagedOrganizationalUnit = "Staging (ou-o30i-zyk8ez93)"
+    SSOUserEmail              = "services+faura-staging-resilience-model@faura.us"
+    SSOUserFirstName          = "StagingRM"
+    SSOUserLastName           = "Resilience Model"
+  }
+
+  account_tags = {
+    "account"     = "staging-resilience-model"
+    "managed"     = "AFT"
+    "environment" = "Staging"
+    "application" = "faura-resilience-model"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Henry Wanjala"
+    change_reason       = "Staging Faura Resilience Model Account using AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group = "staging"
+  }
+
+  account_customizations_name = "staging-resilience-model"
 }
 
 # Production Faura Resilience Model Account
@@ -183,7 +215,7 @@ module "prod_resilience_model" {
   }
 
   custom_fields = {
-    group        = "production"
+    group = "production"
   }
 
   account_customizations_name = "prod-resilience-model"
